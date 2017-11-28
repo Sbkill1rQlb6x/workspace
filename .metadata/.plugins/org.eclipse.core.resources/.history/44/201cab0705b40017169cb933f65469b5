@@ -1,0 +1,53 @@
+
+<%@include file="/WEB-INF/views/header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!-- 轮播图 -->
+    <div class="am-container">
+<div class="am-g am-g-fixed">
+  <div class="am-u-md-12">
+  	<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 3000}" id="myslider">
+  <ul class="am-slides">
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+  </ul>
+</div>
+  </div>
+</div>
+
+</div>
+  <script type="text/javascript">
+  $('#myslider').flexslider({
+	  playAfterPaused: 3000,
+	  before: function(slider) {
+	    if (slider._pausedTimer) {
+	      window.clearTimeout(slider._pausedTimer);
+	      slider._pausedTimer = null;
+	    }
+	  },
+	  after: function(slider) {
+	    var pauseTime = slider.vars.playAfterPaused;
+	    if (pauseTime && !isNaN(pauseTime) && !slider.playing) {
+	      if (!slider.manualPause && !slider.manualPlay && !slider.stopped) {
+	        slider._pausedTimer = window.setTimeout(function() {
+	          slider.play();
+	        }, pauseTime);
+	      }
+	    }
+	  }
+	  // 设置其他参数
+	  startAt: 0,
+	  slideshow: true, 
+	});
+</script>  
+    
+    
+    
+    
+    
+    
+    
+    
+<%@include file="/WEB-INF/views/footer.jsp" %>

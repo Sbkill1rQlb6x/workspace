@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.LostMapper" >
+  <resultMap id="BaseResultMap" type="pojo.Lost" >
+    <id column="Lost_id" property="lostId" jdbcType="INTEGER" />
+    <result column="Lost_detail" property="lostDetail" jdbcType="VARCHAR" />
+    <result column="Lost_Date" property="lostDate" jdbcType="TIMESTAMP" />
+    <result column="User_Id" property="userId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Lost_id, Lost_detail, Lost_Date, User_Id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pojo.LostExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from Lost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from Lost
+    where Lost_id = #{lostId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from Lost
+    where Lost_id = #{lostId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pojo.LostExample" >
+    delete from Lost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pojo.Lost" >
+    insert into Lost (Lost_id, Lost_detail, Lost_Date, 
+      User_Id)
+    values (#{lostId,jdbcType=INTEGER}, #{lostDetail,jdbcType=VARCHAR}, #{lostDate,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="pojo.Lost" >
+    insert into Lost
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="lostId != null" >
+        Lost_id,
+      </if>
+      <if test="lostDetail != null" >
+        Lost_detail,
+      </if>
+      <if test="lostDate != null" >
+        Lost_Date,
+      </if>
+      <if test="userId != null" >
+        User_Id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="lostId != null" >
+        #{lostId,jdbcType=INTEGER},
+      </if>
+      <if test="lostDetail != null" >
+        #{lostDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="lostDate != null" >
+        #{lostDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pojo.LostExample" resultType="java.lang.Integer" >
+    select count(*) from Lost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update Lost
+    <set >
+      <if test="record.lostId != null" >
+        Lost_id = #{record.lostId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lostDetail != null" >
+        Lost_detail = #{record.lostDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lostDate != null" >
+        Lost_Date = #{record.lostDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.userId != null" >
+        User_Id = #{record.userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update Lost
+    set Lost_id = #{record.lostId,jdbcType=INTEGER},
+      Lost_detail = #{record.lostDetail,jdbcType=VARCHAR},
+      Lost_Date = #{record.lostDate,jdbcType=TIMESTAMP},
+      User_Id = #{record.userId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pojo.Lost" >
+    update Lost
+    <set >
+      <if test="lostDetail != null" >
+        Lost_detail = #{lostDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="lostDate != null" >
+        Lost_Date = #{lostDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        User_Id = #{userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pojo.Lost" >
+    update Lost
+    set Lost_detail = #{lostDetail,jdbcType=VARCHAR},
+      Lost_Date = #{lostDate,jdbcType=TIMESTAMP},
+      User_Id = #{userId,jdbcType=INTEGER}
+    where Lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+</mapper>

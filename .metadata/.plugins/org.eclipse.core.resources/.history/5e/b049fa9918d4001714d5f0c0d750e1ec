@@ -1,0 +1,44 @@
+<%@include file="/WEB-INF/views/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+
+
+<div class="am-container">
+	<div class="am-u-md-12">
+	<c:forEach  items="${lostInfo}"  var="l">
+	<article class="am-comment review_css">
+  <a href="#link-to-user-home">
+    <img src="${pageContext.request.contextPath}/images/face1.jpg" alt="" class="am-comment-avatar" width="48" height="48"/>
+  </a>
+
+  <div class="am-comment-main">
+    <header class="am-comment-hd">
+      <div class="am-comment-meta">
+        <a href="#link-to-user" class="am-comment-author">某人</a>
+        发表于  <span>${l.lost_Date}</span> 
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+        ${l.lost_detail}
+    </div>
+  </div>
+</article>
+	</c:forEach>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%@include file="/WEB-INF/views/footer.jsp"%>

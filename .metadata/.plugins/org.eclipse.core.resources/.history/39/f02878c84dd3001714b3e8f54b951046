@@ -1,0 +1,14 @@
+package service;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import mapper.LostMapper;
+
+@Service
+public class LostService {
+
+	@Resource
+	LostMapper lostMapper;
+}

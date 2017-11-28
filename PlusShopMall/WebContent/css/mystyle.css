@@ -1,0 +1,26 @@
+.jumbotron{
+	background-color:#ffffff;
+}
+
+#adimg{
+	width:102%;
+}
+.list-unstyled{
+	
+	line-height:36px;
+	text-align:center;
+}
+#ss{
+	margin-top:53px;
+	border:1px solid #eee;
+	background-color:#f5f5f5;
+}
+.panel-default>.panel-heading
+{
+	color:#ffffff;
+}
+.tpl1 .sider-right a
+{
+	height:34px;
+	margin-top:0px;
+}

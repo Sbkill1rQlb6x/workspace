@@ -1,0 +1,17 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import junit.NextDate;
+
+public class NextDateTest {
+	private static NextDate nextDate=new NextDate(1995,12 ,5 );
+
+	@Test
+	public void testInScope() {
+		assertEquals(true, nextDate.inScope());
+	}
+
+}

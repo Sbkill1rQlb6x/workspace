@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="category2top" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="category2top"/>
+			<item value="top"/>
+			<item value="远方 有一个地方 那里种有我们的梦想远方 有一个地方 那里种有我们的梦想远方 有一个地方 那里种有我们的梦想"/>
+			<item value="远方 有一个地方 那里种有我们的梦想"/>
+			<item value="活动标题"/>
+			<item value="am-btn-primary"/>
+			<item value="代码压缩和最小化。在这里，我们为你收集了9个最好的JavaScript压缩工具将帮"/>
+			<item value="勾三古寺"/>
+		</list>
+		<list key="replacehistory">
+			<item value="活动简介活动简介活动简介活动简介活动简介活动简介活动简介活动简介活动简介活动简介"/>
+			<item value="活动简介活动简介活动简介活动简介活动简介活动简介活动简介"/>
+			<item value="活动标题"/>
+			<item value="新闻描述"/>
+			<item value="新闻标题"/>
+			<item value="新闻内容"/>
+			<item value="新闻内容和"/>
+			<item value="images/face3.jpg"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="290" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
+		<item value="409" key="DIALOG_HEIGHT"/>
+		<item value="1492" key="DIALOG_X_ORIGIN"/>
+		<item value="82" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

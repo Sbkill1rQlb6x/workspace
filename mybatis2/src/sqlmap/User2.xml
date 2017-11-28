@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 动态代理的配置 命名空间namespace要填写mapper -->
+ 	<mapper namespace="mapper.UserMapper">
+ 	<!-- 通过ID查询一个用户 parameterType定义入参的类型  resultType结果自动映射（必须与User里面字段一致） -->
+ 	<select id="findUserById" parameterType="Integer" resultType="pojo.User" >
+ 		select * from user where id = #{v} 
+ 	</select>
+ 	
+ 	<select id="countUser" resultType="Integer">
+ 		select count(*) from user
+ 	</select>
+ 	</mapper>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mybatis/src/sqlMapConfig.xml&apos; to &apos;SqlMapConfig.xml&apos;" description="Rename resource &apos;sqlMapConfig.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/sqlMapConfig.xml" name="SqlMapConfig.xml" stamp="1509156109252" updateReferences="true"/>
+</session>

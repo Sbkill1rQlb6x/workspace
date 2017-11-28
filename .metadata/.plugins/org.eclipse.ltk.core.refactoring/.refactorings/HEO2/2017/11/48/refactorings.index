@@ -1,0 +1,5 @@
+1511771110408	Rename resource 'Lost.xml'
+1511771127012	Delete element
+1511771506708	Move 'lostInfo.jsp' to 'views'
+1511772216890	Extract local variable 'findLostInfo'
+1511792821616	Extract local variable 'findLostInfo'

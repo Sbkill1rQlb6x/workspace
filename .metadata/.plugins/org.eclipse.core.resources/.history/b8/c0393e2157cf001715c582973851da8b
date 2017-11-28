@@ -1,0 +1,49 @@
+package com.neu;
+
+public class Triangle {
+	private long a;
+	private long b;
+	private long c;
+	
+	public Triangle(int a,int b,int c)
+	{//////
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	public boolean inScope()
+	{
+		if(a>=1 && a<=100 &&
+				b>=1 && b<=100 &&
+				c>=1 && c<=100)
+		{
+			return true;
+		}
+		return false;
+	}
+	public boolean isTri()
+	{//判断能否构成三角形
+		if(a+b>c && a+c>b && b+c>a)
+			return true;
+		return false;
+	}
+	public String isType()
+	{
+		String iType = null;
+		if(inScope()){
+			if(isTri()){
+				if(a==b && b==c)
+					iType="等边三角形";
+				else if(a==b || b==c || c==a)
+					iType="等腰三角形";
+				else
+					iType = "一般三角形";
+			}else{
+				iType="不构成三角形";
+			}
+		}else{
+			iType="输入不合理";
+		}
+		return iType;
+	}
+}

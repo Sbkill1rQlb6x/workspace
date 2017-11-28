@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>springMvc-01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+ <!-- 1.配置前端控制器 -->
+ <servlet>
+ 	<servlet-name>springmvc</servlet-name><!-- servlet名字 -->
+ 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 	<!-- servlet配置文件上下文 （没有配置的话 默认找 /WEB-INF/[servlet的名称]-servlet.xml） -->
+ 	<init-param>
+ 		<param-name>contextConfigLocation</param-name>
+ 		<param-value>classpath:springmvc.xml</param-value>
+ 	</init-param>
+ </servlet>
+ 
+ 
+ 
+ 
+ <!-- 2.配置拦截规则 -->
+ <!-- 
+   1. /* 拦截所有jsp、js。。。真的全拦截
+   2. *.action / *.do  拦截以 action do结尾的请求
+   3. / 拦截所有（不包括jsp）（包含.js .png .css）
+  -->
+ <servlet-mapping>
+ 	<servlet-name>springmvc</servlet-name>
+ 	<url-pattern>*.action</url-pattern>
+ </servlet-mapping>
+</web-app>

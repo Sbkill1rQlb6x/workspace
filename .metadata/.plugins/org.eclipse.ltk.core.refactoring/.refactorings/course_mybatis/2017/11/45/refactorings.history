@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;QuickManual.xml&apos; to &apos;springMVCStudentPhoto3/src/service&apos;&#x0A;- Original project: &apos;course_mybatis&apos;&#x0A;- Destination element: &apos;springMVCStudentPhoto3/src/service&apos;&#x0A;- Original element: &apos;QuickManual.xml&apos;" description="Copy file" destination="=springMVCStudentPhoto3/src&lt;service" element1="src/sqlmap/QuickManual.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1510018258308" units="0" version="1.0"/>
+</session>

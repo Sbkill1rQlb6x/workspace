@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Mon Nov 27 15:39:16 CST 2017
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/HEO/WebContent/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar=WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/springMvc-01/WebContent/WEB-INF/lib/spring-web-3.2.4.RELEASE.jar=WEB-INF/lib/spring-web-3.2.4.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/SSMStudent/WebContent/WEB-INF/lib/spring-web-4.0.5.RELEASE.jar=WEB-INF/lib/spring-web-4.0.5.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/SSMStudent/WebContent/WEB-INF/lib/spring-web-4.2.5.RELEASE.jar=WEB-INF/lib/spring-web-4.2.5.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/HEO2/WebContent/WEB-INF/lib/log4j-core-2.0-rc1.jar=WEB-INF/lib/log4j-core-2.0-rc1.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/guoshuai/workspace/HEO2/WebContent/WEB-INF/lib/spring-web-4.1.3.RELEASE.jar=WEB-INF/lib/spring-web-4.1.3.RELEASE.jar

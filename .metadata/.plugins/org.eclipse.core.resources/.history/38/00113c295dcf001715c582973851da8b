@@ -1,0 +1,19 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import junit.NextDate;
+
+public class NextDateTest {
+	private static NextDate nextDate=new NextDate(1995,12,5);
+
+	
+	@Test
+	public void testNextDay(){
+		System.out.println(nextDate.nextDay());
+		assertEquals("1995年12月5日", nextDate.nextDay());
+	}
+
+}

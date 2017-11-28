@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 写SQL语句 namespace命名空间test.findUserById -->
+<mapper namespace="test">
+ 	<!-- 通过ID查询一个用户 parameterType定义入参的类型  resultType结果自动映射（必须与User里面字段一致） -->
+ 	<select id="findUserById" parameterType="Integer" resultType="pojo.User" >
+ 		select * from user where id = #{v} 
+ 	</select>
+ 	
+ 	<!-- 通过用户名模糊查询 
+ 		#{}  占位符 
+ 		${}  字符串拼接 与#{}的区别是少单引号
+ 		括号内不能重名
+ 	-->
+ 	<select id="findUserByUserName" parameterType="String" resultType="pojo.User">
+ 		select * from user where username like '%${value}%'
+ 	</select>
+ 	
+ 	<!-- 添加用户 -->
+ 	<insert id="insertUser" parameterType="pojo.User">
+ 		insert into user (username,birthday,address,sex) values (#{username},#{birthday},#{address},#{sex})
+ 	</insert>
+ 	
+ 	<!-- 添加用户(将用户ID返回去) LAST 最新的 INSERT 插入的 ID 的ID     keyProperty保存到id属性 resultType id是什么属性  order在SQL语句后面执行这个标签-->
+ 	<insert id="insertUser2" parameterType="pojo.User">
+ 		<selectKey keyProperty="id" resultType="Integer" order="AFTER">
+ 			select LAST_INSERT_ID()
+ 		</selectKey>
+ 		insert into user (username,birthday,address,sex) values (#{username},#{birthday},#{address},#{sex})
+ 	</insert>
+ 	
+ 	
+ 	<!-- 更新用户 -->
+ 	<update id="updatetUserById" parameterType="pojo.User">
+ 		update user set username = #{username},sex=#{sex},birthday=#{birthday},address=#{address} where id=#{id}
+ 	</update>
+ 	
+ 	<!-- 删除用户 -->
+ 	<delete id="deleteUserById" parameterType="Integer">
+ 		delete from user where id=#{vvvv}
+ 	</delete>
+ 	
+ 
+</mapper>
+
+	

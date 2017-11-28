@@ -1,0 +1,3 @@
+1509535365705	Delete element
+1509536355672	Extract local variable 'sqlSessionFactory'
+1509536372089	Extract local variable 'sqlSession'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.BookMapper">
+	<insert id="add" parameterType="Book">
+		insert into book values(#{isbn},#{name},#{author},#{price})
+	</insert>
+	<select id="findBooks" resultType="Book">
+		select * from book
+	</select>
+	<delete id="deleteBook" parameterType="String">
+		delete from book where isbn=#{b}
+	</delete>
+	<select id="findBookById" parameterType="String" resultType="Book">
+		select * from book where isbn=#{isbn}
+	</select>
+	<update id="updateBook" parameterType="Book">
+		update book set name=#{name},author=#{author},price=#{price}
+	</update>
+</mapper>

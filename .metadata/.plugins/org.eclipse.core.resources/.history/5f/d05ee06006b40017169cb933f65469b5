@@ -1,0 +1,93 @@
+
+<%@include file="/WEB-INF/views/header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!-- 轮播图 -->
+    <div class="am-g am-container">
+<div class="am-g">
+  <div class="am-u-lg-8">
+  	<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 3000}" id="myslider">
+  <ul class="am-slides">
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+    <li><img src="${pageContext.request.contextPath}/images/1.jpg" /></li>
+  </ul>
+</div>
+  </div>
+</div>
+<div class="am-u-md-4 padding-none">
+            <div class="star am-container"><span><img src="images/star.png">荣誉榜</span></div>
+            <ul class="padding-none am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-2 am-gallery-overlay" data-am-gallery="{ pureview: true }" >
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="#">
+                            <img src="Temp-images/lins.png"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                            <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                            <div class="am-gallery-desc">2375-09-26</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="#">
+                            <img src="Temp-images/lins.png"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                            <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                            <div class="am-gallery-desc">2375-09-26</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="#">
+                            <img src="Temp-images/lins.png"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                            <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                            <div class="am-gallery-desc">2375-09-26</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="#">
+                            <img src="Temp-images/lins.png"  alt="远方 有一个地方 那里种有我们的梦想"/>
+                            <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+                            <div class="am-gallery-desc">2375-09-26</div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+</div>
+  <script type="text/javascript">
+  $('#myslider').flexslider({
+	  playAfterPaused: 3000,
+	  before: function(slider) {
+	    if (slider._pausedTimer) {
+	      window.clearTimeout(slider._pausedTimer);
+	      slider._pausedTimer = null;
+	    }
+	  },
+	  after: function(slider) {
+	    var pauseTime = slider.vars.playAfterPaused;
+	    if (pauseTime && !isNaN(pauseTime) && !slider.playing) {
+	      if (!slider.manualPause && !slider.manualPlay && !slider.stopped) {
+	        slider._pausedTimer = window.setTimeout(function() {
+	          slider.play();
+	        }, pauseTime);
+	      }
+	    }
+	  }
+	  // 设置其他参数
+	  startAt: 0,
+	  slideshow: true, 
+	});
+</script>  
+    
+    
+    
+    
+    
+    
+    
+    
+<%@include file="/WEB-INF/views/footer.jsp" %>

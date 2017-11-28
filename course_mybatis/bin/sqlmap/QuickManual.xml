@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapperInterface.QuickManualMapper">
+	<select id="findById" parameterType="String" resultType="pojo.QuickManual">
+		select * from quickmanual where id =#{v}
+	</select>
+	<select id="findAll" resultType="pojo.QuickManual">
+		select * from quickmanual
+	</select>
+	<delete id="deleteById" parameterType="String">
+		delete  from quickmanual where id=#{d}
+	</delete>
+</mapper>

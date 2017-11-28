@@ -1,0 +1,23 @@
+package action;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import service.LostService;
+
+@Controller
+public class LostAction {
+
+	@Autowired
+	LostService lostService;
+
+	public LostService getLostService() {
+		return lostService;
+	}
+
+	public void setLostService(LostService lostService) {
+		this.lostService = lostService;
+	}
+	
+	
+}
